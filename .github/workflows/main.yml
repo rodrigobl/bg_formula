@@ -33,7 +33,7 @@ jobs:
     - run: flutter build apk
 
     # Build web
-    - run: flutter build web --web-renderer html --base-href "/rpgmap/"
+    - run: flutter build web --web-renderer html --base-href "/bg_formula/"
 
     # Zip generated flutter web files
     - run: zip -r ${{ github.ref_name }}.zip ./build/web
@@ -67,7 +67,7 @@ jobs:
         tag_name: ${{ github.ref_name }}
         release_name: Release ${{ github.ref_name }}
         body: |
-          ## **Changelog** (Commits) - https://github.com/rodrigobl/rpgmap/compare/${{ steps.previousTagVersion.outputs.GIT_PREVIOUSTAG }}...${{ github.ref_name }}
+          ## **Changelog** (Commits) - https://github.com/rodrigobl/bg_formula/compare/${{ steps.previousTagVersion.outputs.GIT_PREVIOUSTAG }}...${{ github.ref_name }}
           ${{ steps.gitLog.outputs.GIT_CHANGELOG_COMMITS }}
 
           # **Pull Requests**
