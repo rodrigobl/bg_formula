@@ -9,6 +9,12 @@ on:
       - '**'           # Push events to every tag including hierarchical tags like v1.0/beta
     
 jobs:
+
+permissions:
+  contents: 'read'
+  id-token: 'write'
+  issues: 'write'
+  
   build:
     # This job will run on ubuntu virtual machine
     runs-on: ubuntu-latest
